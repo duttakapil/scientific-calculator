@@ -1,9 +1,10 @@
 const path = require("path");
-const webpack = require("webpack");
+// const webpack = require("webpack");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.js",
-    mode: "development",
+    // entry: "./src/index.js",
+    // mode: "development",
     module: {
         rules : [
             {
@@ -18,7 +19,12 @@ module.exports = {
             }
         ]
     },
-    resolve: { extensions : ["*", ".js", ".jsx"] },
+    resolve: {
+        modules: [path.join(__dirname, 'src'), 'node_modules'],
+        alias: {
+            react: path.join(__dirname, 'node_modules', 'react'),
+        }
+    },
     output : {
         path : path.resolve(__dirname, "build/"),
         publicPath : "/build/",
@@ -30,5 +36,10 @@ module.exports = {
         publicPath : "http://localhost:3000/build/",
         hotOnly : true
     },
-    plugins : [ new webpack.HotModuleReplacementPlugin() ]
+    plugins : [ 
+        // new webpack.HotModuleReplacementPlugin(), 
+        new HtmlWebPackPlugin({
+            template: './src/index.html'
+        })
+    ]
 };

@@ -1,14 +1,14 @@
 {
   "name": "casio-calculator",
-  "homepage" : "https://duttakapil.github.io/sci-calculator",
+  "homepage": "https://duttakapil.github.io/sci-calculator",
   "version": "1.0.0",
   "description": "Casio Scientific Calculator clone as a web app using React",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build" : "webpack --mode production",
+    "start": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",    
+    "deploy": "gh-pages -d build",
     "test": "test"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "gh-pages": "^3.2.3",
+    "html-webpack-plugin": "^5.3.2",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
@@ -42,5 +43,14 @@
     "-": "0.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "bin": {
+    "minimal-reactjs-boilerplate": "./bin/start.js"
   }
 }
