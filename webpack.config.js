@@ -1,45 +1,42 @@
-const path = require("path");
-// const webpack = require("webpack");
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    // entry: "./src/index.js",
-    // mode: "development",
-    module: {
-        rules : [
-            {
-                test : /\.(js|jsx)$/,
-                exclude : /(node_modules|bower_components)/,
-                loader : "babel-loader",
-                options : {presets : ["@babel/env", "@babel/react"]}
-            },
-            {
-                test : /\.css$/,
-                use: ["style-loader", "css-loader"]
-            }
-        ]
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js',
+  },
+  resolve: {
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
+    alias: {
+      react: path.join(__dirname, 'node_modules', 'react'),
     },
-    resolve: {
-        modules: [path.join(__dirname, 'src'), 'node_modules'],
-        alias: {
-            react: path.join(__dirname, 'node_modules', 'react'),
-        }
-    },
-    output : {
-        path : path.resolve(__dirname, "build/"),
-        publicPath : "/build/",
-        filename : "bundle.js"
-    },
-    devServer : {
-        contentBase : path.join(__dirname, "public/"),
-        port : 3000,
-        publicPath : "http://localhost:3000/build/",
-        hotOnly : true
-    },
-    plugins : [ 
-        // new webpack.HotModuleReplacementPlugin(), 
-        new HtmlWebPackPlugin({
-            template: './src/index.html'
-        })
-    ]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+    }),
+  ],
 };
