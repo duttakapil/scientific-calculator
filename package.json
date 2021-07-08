@@ -1,6 +1,6 @@
 {
   "name": "casio-calculator",
-  "homepage" : "https://duttakapil.github.io/scientific-calculator",
+  "homepage" : "http://duttakapil.github.io/scientific-calculator",
   "version": "1.0.0",
   "description": "Casio Scientific Calculator clone as a web app using React",
   "main": "index.js",
@@ -25,7 +25,6 @@
   "bugs": {
     "url": "https://github.com/duttakapil/scientific-calculator/issues"
   },
-  "homepage": "https://github.com/duttakapil/scientific-calculator#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
