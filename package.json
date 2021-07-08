@@ -1,6 +1,6 @@
 {
   "name": "casio-calculator",
-  "homepage": "https://duttakapil.github.io/sci-calculator",
+  "homepage": "https://duttakapil.github.io/scientific-calculator",
   "version": "1.0.0",
   "description": "Casio Scientific Calculator clone as a web app using React",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duttakapil/sci-calculator.git"
+    "url": "git+https://github.com/duttakapil/scientific-calculator.git"
   },
   "keywords": [
     "react",
@@ -23,7 +23,7 @@
   "author": "Kapil",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/duttakapil/sci-calculator/issues"
+    "url": "https://github.com/duttakapil/scientific-calculator/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
