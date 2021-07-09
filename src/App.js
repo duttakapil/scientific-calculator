@@ -115,7 +115,7 @@ const KEYS = {
     
     React.useEffect(() => {
       let eq = [...equation].join('');
-      if(eq.length >= 15) {
+      if(eq.length >= 13) {
         // console.log(eq);
         eq = eq.split('').reverse().slice(0, 15).reverse().join('');
         setOutput(eq);
