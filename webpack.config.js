@@ -1,42 +1,34 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-  },
-  resolve: {
-    modules: [path.join(__dirname, 'src'), 'node_modules'],
-    alias: {
-      react: path.join(__dirname, 'node_modules', 'react'),
-    },
-  },
+  entry : "./src/index.html",
+  mode : development,
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options : {presets : ["@babel/env"]}
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
+        use: ['style-loader', 'css-loader']
       },
     ],
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-    }),
-  ],
+  resolve: {extensions : ["*", ".js", ".jsx"]},
+  output: {
+    path: path.resolve(__dirname, 'build/'),
+    publicPath : "/build/",
+    filename: "bundle.js"/
+  },
+  devServer : {
+    contentBase : path.join(__dirname, "public/"),
+    port : 3000,
+    publicPath : "http://localhost:300/build/",
+    hotOnly : true
+  },  
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };

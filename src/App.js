@@ -1,5 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
+import {hot} from 'react-hot-loader';
 import './App.css';
 
 const KEYS = {
@@ -262,5 +263,5 @@ const KEYS = {
     )
   }
   
-  export default Calc;
+  export default hot(module)(Calc);
   // ReactDOM.render(<Calc/>, document.getElementById('app'));
