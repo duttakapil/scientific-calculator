@@ -2,8 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry : "./src/index.html",
-  mode : development,
+  entry : "./src/index.js",
+  mode : "development",
   module: {
     rules: [
       {
@@ -22,7 +22,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build/'),
     publicPath : "/build/",
-    filename: "bundle.js"/
+    filename: "bundle.js"
   },
   devServer : {
     contentBase : path.join(__dirname, "public/"),
