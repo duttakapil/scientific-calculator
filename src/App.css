@@ -6,7 +6,8 @@
     width : 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
+    /* background-color : red; */
   }
   
   #calc {
@@ -20,7 +21,7 @@
     border-right : 0.5rem solid #5D5375;
     border-top : 0.5rem solid #5D5375;
     display: flex;
-    flex-direction : column;
+    flex-direction : column;    
   }
   
   #header {
@@ -264,4 +265,10 @@
     width : 80%;
     margin-top : -16%;
     margin-left : 20%;
+  }
+
+  @media (max-width : 1000px) {
+    #calc {
+      transform: scale(2.5);
+    }
   }
