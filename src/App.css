@@ -269,6 +269,6 @@
 
   @media (max-width : 1000px) {
     #calc {
-      transform: scale(2.5);
+      transform: scale(0.95);
     }
   }
