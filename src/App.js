@@ -262,4 +262,3 @@ const KEYS = {
   }
   
   export default hot(module)(Calc);
-  // ReactDOM.render(<Calc/>, document.getElementById('app'));
